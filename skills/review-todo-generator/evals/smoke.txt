@@ -1,0 +1,46 @@
+{
+  "todos": [
+    {
+      "id": "todo-001",
+      "priority": "P0",
+      "field": "主文刑期月數",
+      "reason": "rule=3 llm=4, critical sentencing field",
+      "case_id": "115交簡478"
+    },
+    {
+      "id": "todo-002",
+      "priority": "P0",
+      "field": "累犯",
+      "reason": "rule=true llm=false, critical sentencing field",
+      "case_id": "115交簡478"
+    },
+    {
+      "id": "todo-003",
+      "priority": "P0",
+      "field": "沒收金額",
+      "reason": "rule=5000 llm=MISSING, critical sentencing field",
+      "case_id": "115交簡478"
+    },
+    {
+      "id": "todo-004",
+      "priority": "P1",
+      "field": "被告姓名",
+      "reason": "rule=\"何建睿\" llm=\"何建叡\" similarity=0.5, key identity/quantity field",
+      "case_id": "115交簡478"
+    },
+    {
+      "id": "todo-005",
+      "priority": "P2",
+      "field": "扣案物",
+      "reason": "field='扣案物' flag=low_similarity similarity=0.5",
+      "case_id": "115交簡478"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "P0": 3,
+    "P1": 1,
+    "P2": 1,
+    "sampled": 0
+  }
+}

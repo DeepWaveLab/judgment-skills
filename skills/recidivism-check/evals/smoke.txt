@@ -1,0 +1,25 @@
+{
+  "is_recidivist": true,
+  "matched_priors": [
+    {
+      "case_no": "107年度湖交簡字第433號",
+      "finalized_date": "2018-07-10",
+      "days_to_offense": 2807,
+      "within_window": true,
+      "window": "10年內",
+      "custodial": true
+    }
+  ],
+  "rationale": "107年度湖交簡字第433號 判決確定 2018-07-10, 本案犯罪日 2026-03-17, 10年內。",
+  "caveat": "刑法§47 還要求前案刑罰已執行完畢或赦免；本技能無法僅從文字確認，請人工再覆核。",
+  "_extracted_priors": [
+    {
+      "case_no": "107年度湖交簡字第433號",
+      "finalized_date": "2018-07-10",
+      "sentence_months": 2,
+      "crime_type": "不能安全駕駛"
+    }
+  ],
+  "_detected_offense_date": "2026-03-17",
+  "_detected_crime_type": "公共危險"
+}
