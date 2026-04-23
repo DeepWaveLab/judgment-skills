@@ -1,0 +1,114 @@
+[
+  {
+    "statute": "中華民國刑法",
+    "article": "185-3",
+    "paragraph": "1",
+    "item": "1",
+    "raw": "刑法第185條之3第1項第1款",
+    "offset": 332
+  },
+  {
+    "statute": "刑事訴訟法",
+    "article": "449",
+    "paragraph": "1",
+    "item": null,
+    "raw": "刑事訴訟法第449條第1項前段、第3項",
+    "offset": 649
+  },
+  {
+    "statute": "刑事訴訟法",
+    "article": "449",
+    "paragraph": "3",
+    "item": null,
+    "raw": "刑事訴訟法第449條第1項前段、第3項",
+    "offset": 649
+  },
+  {
+    "statute": "刑事訴訟法",
+    "article": "454",
+    "paragraph": "2",
+    "item": null,
+    "raw": "第\n454條第2項",
+    "offset": 669
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "185-3",
+    "paragraph": "1",
+    "item": "1",
+    "raw": "刑法第185條之3第1項第1款",
+    "offset": 679
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "41",
+    "paragraph": "1",
+    "item": null,
+    "raw": "第41條第1項前\n段",
+    "offset": 695
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "42",
+    "paragraph": "3",
+    "item": null,
+    "raw": "第42條第3項前段",
+    "offset": 706
+  },
+  {
+    "statute": "刑法施行法",
+    "article": "1-1",
+    "paragraph": "1",
+    "item": null,
+    "raw": "刑法施行法第1條之1第1項",
+    "offset": 716
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "185-3",
+    "paragraph": null,
+    "item": null,
+    "raw": "中華民國刑法第185條之3",
+    "offset": 1003
+  },
+  {
+    "statute": "陸海空軍刑法",
+    "article": "54",
+    "paragraph": null,
+    "item": null,
+    "raw": "陸海空軍刑法第54條",
+    "offset": 1303
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "185-3",
+    "paragraph": "1",
+    "item": "1",
+    "raw": "刑法第185條之3第1項第1款",
+    "offset": 1917
+  },
+  {
+    "statute": "刑事訴訟法",
+    "article": "451",
+    "paragraph": "1",
+    "item": null,
+    "raw": "刑事訴訟法第451條第1項",
+    "offset": 1971
+  },
+  {
+    "statute": "中華民國刑法",
+    "article": "185-3",
+    "paragraph": null,
+    "item": null,
+    "raw": "中華民國刑法第185條之3",
+    "offset": 2236
+  },
+  {
+    "statute": "陸海空軍刑法",
+    "article": "54",
+    "paragraph": null,
+    "item": null,
+    "raw": "陸海空軍刑法第54條",
+    "offset": 2533
+  }
+]

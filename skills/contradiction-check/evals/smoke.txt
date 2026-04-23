@@ -1,0 +1,63 @@
+{
+  "diffs": [
+    {
+      "field": "主文刑期月數",
+      "rule_value": 3,
+      "llm_value": 4,
+      "similarity": 0.0,
+      "flag": "mismatch"
+    },
+    {
+      "field": "被告姓名",
+      "rule_value": "何建睿",
+      "llm_value": "何建叡",
+      "similarity": 0.5,
+      "flag": "low_similarity"
+    },
+    {
+      "field": "犯罪日期",
+      "rule_value": "2026-03-17",
+      "llm_value": "2026-03-17",
+      "similarity": 1.0,
+      "flag": "agree"
+    },
+    {
+      "field": "扣案物",
+      "rule_value": [
+        "安非他命",
+        "電子秤"
+      ],
+      "llm_value": [
+        "安非他命"
+      ],
+      "similarity": 0.5,
+      "flag": "low_similarity"
+    },
+    {
+      "field": "累犯",
+      "rule_value": true,
+      "llm_value": true,
+      "similarity": 1.0,
+      "flag": "agree"
+    },
+    {
+      "field": "罰金金額",
+      "rule_value": 20000,
+      "llm_value": null,
+      "similarity": 0.0,
+      "flag": "only_rule"
+    },
+    {
+      "field": "沒收物",
+      "rule_value": null,
+      "llm_value": "電子秤",
+      "similarity": 0.0,
+      "flag": "only_llm"
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "mismatches": 3,
+    "jaccard_avg": 0.43
+  }
+}
