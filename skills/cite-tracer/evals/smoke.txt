@@ -1,0 +1,83 @@
+{
+  "field_trace": [
+    {
+      "field": "被告",
+      "value": "何建睿",
+      "source_paragraph_ids": [
+        "p-001",
+        "p-002",
+        "p-008"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "檢察官",
+      "value": "林彥均",
+      "source_paragraph_ids": [
+        "p-013",
+        "p-028"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "法官",
+      "value": "曾名阜",
+      "source_paragraph_ids": [
+        "p-013"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "主文刑期月數",
+      "value": 3,
+      "source_paragraph_ids": [
+        "p-001",
+        "p-002",
+        "p-005"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "罰金金額",
+      "value": 20000,
+      "source_paragraph_ids": [
+        "p-002",
+        "p-001",
+        "p-022"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "判決日期",
+      "value": "2026-04-21",
+      "source_paragraph_ids": [
+        "p-013",
+        "p-028",
+        "p-022"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "酒精濃度",
+      "value": "0.46毫克",
+      "source_paragraph_ids": [
+        "p-008",
+        "p-022"
+      ],
+      "match_score": 1.0
+    },
+    {
+      "field": "前案字號",
+      "value": "107年度湖交簡字第433號",
+      "source_paragraph_ids": [
+        "p-008",
+        "p-001"
+      ],
+      "match_score": 1.0
+    }
+  ],
+  "_self_test": {
+    "paragraph_count": 33,
+    "sample_path": "judgment_sample_001.txt"
+  }
+}
