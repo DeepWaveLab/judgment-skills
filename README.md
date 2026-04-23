@@ -87,7 +87,114 @@ skills/<name>/
 
 ---
 
-## 四、快速開始
+## 四、安裝
+
+本技能庫可用於 **(A) 本機開發／CI**、**(B) Claude Code 外掛市集**、**(C) Claude.ai 介面**、**(D) Claude API** 四種情境。實際部署至司法官學院內網時，建議走 (A) + 內網鏡像；(B)-(D) 僅供開發者本機測試。
+
+### 情境 A：本機 / 內網開發（建議做法）
+
+1. **取得原始碼**
+
+   ```bash
+   # 公開鏡像（開發用）
+   git clone https://github.com/DeepWaveLab/judgment-skills.git
+   cd judgment-skills
+
+   # 或將整個資料夾（含 .git）以加密隨身碟方式送入內網鏡像
+   ```
+
+2. **建立虛擬環境並安裝相依套件**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate          # Windows: .venv\Scripts\activate
+   pip install -U pip
+   pip install pdfplumber pypdf openpyxl
+   ```
+
+   > 核心技能只需 Python 3.11 stdlib；上述三個套件用於 PDF 解析與 xlsx 匯出。若內網無 PyPI，請以 `pip download` 於外網抓 wheel，再離線 `pip install --no-index --find-links ./wheels` 安裝。
+
+3. **驗證安裝**
+
+   ```bash
+   python3 evals/run_all.py
+   # 預期：10/10 skills passed.
+   ```
+
+### 情境 B：安裝至 Claude Code（Plugin 市集模式）
+
+Claude Code 可將整個 repo 註冊為本地 plugin 市集，再選擇技能安裝：
+
+```bash
+# 於 Claude Code 互動介面中輸入：
+/plugin marketplace add /path/to/judgment-skills
+/plugin install judgment-skills@local        # 若已附 .claude-plugin/ 設定
+```
+
+若尚未附上 `.claude-plugin/marketplace.json`（v0.1.0 目前未附），可直接把想用的單一技能資料夾複製至 Claude Code 技能目錄：
+
+```bash
+# macOS / Linux
+mkdir -p ~/.claude/skills
+cp -R skills/doc-segmenter ~/.claude/skills/
+cp -R skills/pii-deid      ~/.claude/skills/
+# …重複複製所需技能
+```
+
+Claude Code 啟動後輸入 `/skills` 應可看到已匯入之技能；對話中提到 `doc-segmenter`、`pii-deid` 等名稱即會被呼叫。
+
+### 情境 C：上傳至 Claude.ai（付費方案）
+
+Claude.ai Pro / Team / Enterprise 支援使用者自備 Skill：
+
+1. 於 repo 根目錄為每個技能打包：
+
+   ```bash
+   cd skills/doc-segmenter
+   zip -r ../../dist/doc-segmenter.zip . -x "evals/*" "*.pyc"
+   ```
+
+2. 進入 Claude.ai → **設定 → Capabilities → Skills → Upload skill** → 上傳 `doc-segmenter.zip`。
+3. 其他 9 個技能重複相同流程。
+
+> 注意：上傳即代表資料會離開內網環境，司法官學院正式環境**不**建議走此路徑，只作為功能展示／demo 之用。
+
+### 情境 D：透過 Claude API 使用
+
+Claude API 的 Skills 支援讓程式化流程直接載入技能資料夾：
+
+```python
+import anthropic, pathlib
+
+client = anthropic.Anthropic()
+
+skill_dir = pathlib.Path("skills/doc-segmenter")
+skill = client.skills.create(
+    name="doc-segmenter",
+    files=[str(p) for p in skill_dir.rglob("*") if p.is_file()],
+)
+
+msg = client.messages.create(
+    model="claude-opus-4-7",
+    max_tokens=1024,
+    skills=[skill.id],
+    messages=[{"role": "user", "content": "幫我用 doc-segmenter 切這份判決。"}],
+)
+print(msg.content)
+```
+
+API 使用說明詳見 Anthropic 官方文件：<https://docs.claude.com/en/api/skills-guide>
+
+### 解除安裝 / 移除
+
+- 情境 A：刪除 clone 下來的資料夾即可。
+- 情境 B：`rm -rf ~/.claude/skills/<skill-name>`，或在 Claude Code 執行 `/plugin uninstall judgment-skills@local`。
+- 情境 C：Claude.ai → Skills → 點該技能右側的 **Remove**。
+- 情境 D：`client.skills.delete(skill.id)`。
+
+---
+
+## 五、快速開始
 
 ### 1. 環境需求
 
@@ -136,7 +243,7 @@ python3 skills/recidivism-check/scripts/check_recidivism.py samples/judgment_sam
 
 ---
 
-## 五、資安與合規（對應 RFP 第 IX 項）
+## 六、資安與合規（對應 RFP 第 IX 項）
 
 - **白名單匯入**：僅載入 `skills/` 目錄下已審查之技能；**不**連結 Awesome-Claude-Agents 等公開市集。
 - **原始碼檢視**：所有技能皆為純 Python 3.11 stdlib 腳本（外加 `pdfplumber` / `pypdf` / `openpyxl`），可逐行人工審查。
@@ -146,7 +253,7 @@ python3 skills/recidivism-check/scripts/check_recidivism.py samples/judgment_sam
 
 ---
 
-## 六、品管流程（對應 RFP 第 VI 項）
+## 七、品管流程（對應 RFP 第 VI 項）
 
 | RFP 要求           | 對應技能                                 |
 |--------------------|------------------------------------------|
@@ -158,7 +265,7 @@ python3 skills/recidivism-check/scripts/check_recidivism.py samples/judgment_sam
 
 ---
 
-## 七、開發流程（Git Flow）
+## 八、開發流程（Git Flow）
 
 ```
 main
@@ -178,13 +285,13 @@ main
 
 ---
 
-## 八、授權
+## 九、授權
 
 Proprietary — 僅供司法官學院「毒品判決書文本探勘系統」案內部使用。
 
 ---
 
-## 九、參考資料
+## 十、參考資料
 
 - Anthropic Agent Skills Specification — <https://agentskills.io/specification>
 - The Complete Guide to Building Skills for Claude — <https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf>
