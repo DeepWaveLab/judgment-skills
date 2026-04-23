@@ -1,0 +1,40 @@
+{
+  "is_drug_sales_case": false,
+  "case_no": "115年度交簡字第478號",
+  "court": "臺灣臺北地方法院",
+  "judgment_date": "中 華 民 國 115 年 4 月 21 日",
+  "judge": "曾名阜",
+  "prosecutor": "林彥均",
+  "defendant": "何建睿",
+  "co_defendants": [],
+  "drug_schedule": null,
+  "drug_type": null,
+  "seized_weight_g": null,
+  "purity_percent": null,
+  "transaction_count": null,
+  "transaction_amount_twd": null,
+  "unit_price_twd": null,
+  "buyer": null,
+  "transaction_location": null,
+  "indicted_statutes": [
+    "刑法第185條",
+    "刑事訴訟法第449條第1項",
+    "刑法施行法第1條",
+    "刑法第54條",
+    "刑事訴訟法第451條第1項"
+  ],
+  "charge_label": null,
+  "sentence_months": 3,
+  "sentence_text": "有期徒刑參月",
+  "fine_twd": 20000,
+  "commute_rate_twd": null,
+  "recidivism": false,
+  "confessed": true,
+  "probation": false,
+  "forfeiture": null,
+  "prior_cases": [
+    "115年度交簡字第478號",
+    "107年度湖交簡字第433號",
+    "115年度偵字第11703號"
+  ]
+}
