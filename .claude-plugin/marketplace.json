@@ -1,0 +1,31 @@
+{
+  "name": "dwave-judgment-skills",
+  "owner": {
+    "name": "DeepWave Lab",
+    "url": "https://github.com/DeepWaveLab"
+  },
+  "metadata": {
+    "description": "Claude Agent Skills for Taiwan criminal judgment text mining (judgment-skills v0.1.0).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "judgment-skills",
+      "description": "Ten production skills covering segmentation, drug-sales field extraction, legal citation detection, PII de-identification, sentence normalization, source-paragraph tracing, rule-vs-LLM contradiction checking, review todo generation, xlsx/JSON export, and 刑法 §47 recidivism checking.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/doc-segmenter",
+        "./skills/drug-sales-extract",
+        "./skills/legal-cite-detect",
+        "./skills/pii-deid",
+        "./skills/sentence-normalize",
+        "./skills/cite-tracer",
+        "./skills/contradiction-check",
+        "./skills/review-todo-generator",
+        "./skills/export-tabular",
+        "./skills/recidivism-check"
+      ]
+    }
+  ]
+}

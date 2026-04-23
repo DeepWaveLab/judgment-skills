@@ -121,43 +121,75 @@ skills/<name>/
    # 預期：10/10 skills passed.
    ```
 
-### 情境 B：安裝至 Claude Code（Plugin 市集模式）
+### 情境 B：Claude Code（`/plugin install`）
 
-Claude Code 可將整個 repo 註冊為本地 plugin 市集，再選擇技能安裝：
+本 repo 已附 `.claude-plugin/marketplace.json`，可作為一個 Claude Code Plugin 市集使用。
 
-```bash
-# 於 Claude Code 互動介面中輸入：
-/plugin marketplace add /path/to/judgment-skills
-/plugin install judgment-skills@local        # 若已附 .claude-plugin/ 設定
-```
+1. **註冊本 repo 為市集**（在 Claude Code 互動介面中輸入）：
 
-若尚未附上 `.claude-plugin/marketplace.json`（v0.1.0 目前未附），可直接把想用的單一技能資料夾複製至 Claude Code 技能目錄：
-
-```bash
-# macOS / Linux
-mkdir -p ~/.claude/skills
-cp -R skills/doc-segmenter ~/.claude/skills/
-cp -R skills/pii-deid      ~/.claude/skills/
-# …重複複製所需技能
-```
-
-Claude Code 啟動後輸入 `/skills` 應可看到已匯入之技能；對話中提到 `doc-segmenter`、`pii-deid` 等名稱即會被呼叫。
-
-### 情境 C：上傳至 Claude.ai（付費方案）
-
-Claude.ai Pro / Team / Enterprise 支援使用者自備 Skill：
-
-1. 於 repo 根目錄為每個技能打包：
-
-   ```bash
-   cd skills/doc-segmenter
-   zip -r ../../dist/doc-segmenter.zip . -x "evals/*" "*.pyc"
+   ```
+   /plugin marketplace add DeepWaveLab/judgment-skills
    ```
 
-2. 進入 Claude.ai → **設定 → Capabilities → Skills → Upload skill** → 上傳 `doc-segmenter.zip`。
-3. 其他 9 個技能重複相同流程。
+   或若是從內網 git mirror / 本地 clone：
 
-> 注意：上傳即代表資料會離開內網環境，司法官學院正式環境**不**建議走此路徑，只作為功能展示／demo 之用。
+   ```
+   /plugin marketplace add /path/to/judgment-skills
+   ```
+
+2. **安裝 plugin**（bundle 一次裝齊 10 個技能）：
+
+   ```
+   /plugin install judgment-skills@dwave-judgment-skills
+   ```
+
+   或走 UI：
+
+   ```
+   /plugin  →  Browse and install plugins
+            →  選 dwave-judgment-skills
+            →  選 judgment-skills
+            →  Install now
+   ```
+
+3. **確認已安裝**：
+
+   ```
+   /plugin list
+   /skills
+   ```
+
+   Claude Code 中輸入 `doc-segmenter`、`pii-deid` 等技能名稱或以自然語言描述（例：「幫我用 pii-deid 去識別化這份判決書」），Claude 會自動呼叫對應技能。
+
+> 想只裝單一技能、不走 marketplace 的話，直接複製資料夾也行：
+> ```bash
+> mkdir -p ~/.claude/skills && cp -R skills/doc-segmenter ~/.claude/skills/
+> ```
+
+### 情境 C：Claude for Work / Claude.ai（上傳 zip）
+
+Claude for Work（原 Claude.ai Team / Enterprise）與 Claude.ai Pro 皆支援使用者自備 Skill，採 zip 上傳方式。本 repo 附有打包腳本一次產出 10 個 zip：
+
+1. **產生 zip**（需於本機先 clone 本 repo）：
+
+   ```bash
+   cd judgment-skills
+   bash scripts/package_for_claude_ai.sh
+   # 輸出：dist/<skill-name>.zip 共 10 個
+   ```
+
+2. **上傳至 Claude for Work**：
+
+   | 方案                  | 上傳路徑                                                        |
+   |-----------------------|------------------------------------------------------------------|
+   | Claude for Work (Enterprise/Team) | **Admin Console → Skills → Upload skill**（需 Admin 權限）        |
+   | Claude.ai Pro         | **Settings → Capabilities → Skills → Upload skill**              |
+
+   逐一上傳 `dist/doc-segmenter.zip`、`dist/pii-deid.zip` …… 共 10 個。首次上傳後可加入組織 workspace，之後成員即可直接使用。
+
+3. **在對話中呼叫**：開啟 Skills panel 勾選想用的技能，或直接用自然語言點名，例：「請用 `drug-sales-extract` 技能處理這份判決書。」
+
+> ⚠️ 合規提醒：上傳即代表 SKILL.md 與 scripts 會送到 Anthropic 服務。**判決書內容本身不會被技能定義夾帶**（技能只含程式碼 + 規則），但正式環境仍建議以情境 A（本機／內網）或情境 D（API + 自管 proxy）為主。
 
 ### 情境 D：透過 Claude API 使用
 
@@ -188,7 +220,7 @@ API 使用說明詳見 Anthropic 官方文件：<https://docs.claude.com/en/api/
 ### 解除安裝 / 移除
 
 - 情境 A：刪除 clone 下來的資料夾即可。
-- 情境 B：`rm -rf ~/.claude/skills/<skill-name>`，或在 Claude Code 執行 `/plugin uninstall judgment-skills@local`。
+- 情境 B：Claude Code 執行 `/plugin uninstall judgment-skills@dwave-judgment-skills`；若是手動複製，`rm -rf ~/.claude/skills/<skill-name>`。
 - 情境 C：Claude.ai → Skills → 點該技能右側的 **Remove**。
 - 情境 D：`client.skills.delete(skill.id)`。
 

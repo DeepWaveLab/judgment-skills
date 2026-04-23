@@ -7,6 +7,7 @@ venv/
 .env
 *.log
 evals/output/
+dist/
 *.xlsx
 !samples/**/*.xlsx
 *.egg-info/
