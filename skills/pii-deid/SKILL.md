@@ -1,7 +1,7 @@
 ---
 name: pii-deid
 description: Use this skill to de-identify Taiwan criminal judgments (判決書) by replacing personally identifiable information with stable placeholder codes. Trigger whenever the user asks to redact, anonymize, mask, 去識別化, 代號化, remove names, strip personal data from a judgment, or prepare judgment text for sharing, publication, or LLM prompting. Handles 被告 / 被害人 / 證人 / 檢察官 / 法官 / 書記官 Chinese names, ROC national ID numbers, Taiwan vehicle plates, phone numbers, and street addresses down to 巷弄門牌號. Returns both redacted text and a mapping from placeholder code back to the original string so the transformation is reversible.
-version: 1.8.0
+version: 0.1.0
 license: Proprietary
 ---
 

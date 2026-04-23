@@ -1,4 +1,4 @@
-# Drug-Sales Field Dictionary (v2.1.0)
+# Drug-Sales Field Dictionary (v0.1.0)
 
 Authoritative schema for the drug-sales extractor. Every field MUST be present in the output record, even if null. Types shown use Python annotations.
 

@@ -1,7 +1,7 @@
 ---
 name: recidivism-check
 description: Use this skill when Claude needs to determine whether a Taiwan criminal defendant is a 累犯 per 刑法§47 based on prior judgment records and the current offense date. Also exposes a helper to extract candidate prior-case references (e.g. "107年度湖交簡字第433號") from raw judgment text. Trigger whenever the user asks about 累犯, prior convictions within 5 years, recidivism, §47, 前案, 前科, 是否構成累犯. Keywords - 累犯, 刑法47, recidivism, prior record, 前案, 五年內再犯.
-version: 1.1.0
+version: 0.1.0
 license: Proprietary
 ---
 

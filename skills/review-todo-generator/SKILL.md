@@ -1,7 +1,7 @@
 ---
 name: review-todo-generator
 description: Use this skill when Claude needs to turn a contradiction-check diff (and optional confidence scores) into a prioritised, case-tagged human-review TODO list for Taiwan judgment QA workflows. Trigger whenever the user asks for review assignments, 每日覆核, QA triage, spot-checks, sampling, or wants to route critical-field mismatches (量刑, 累犯, 沒收, 緩刑, 易科罰金) to a human reviewer. Keywords - todo, review, triage, priority P0 P1 P2, 人工覆核, 待辦, sampling spot check, 抽樣.
-version: 1.0.0
+version: 0.1.0
 license: Proprietary
 ---
 

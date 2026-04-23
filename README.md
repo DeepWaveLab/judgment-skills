@@ -30,16 +30,16 @@
 
 | # | 資料夾                   | 版本     | 中文名稱                  | 角色            |
 |---|--------------------------|----------|---------------------------|-----------------|
-| 1 | `doc-segmenter`          | v1.6.2   | 判決書段落切分            | 前處理          |
-| 2 | `drug-sales-extract`     | v2.1.0   | 毒品販賣欄位抽取          | 抽取            |
-| 3 | `legal-cite-detect`      | v1.5.0   | 法條引用偵測              | 抽取            |
-| 4 | `pii-deid`               | v1.8.0   | 個資去識別化              | 資安            |
-| 5 | `sentence-normalize`     | v1.3.1   | 量刑規則正規化            | 正規化          |
-| 6 | `cite-tracer`            | v1.2.0   | 段落引用追溯              | 稽核            |
-| 7 | `contradiction-check`    | v1.4.0   | 矛盾檢核（規則 vs LLM）  | 品管            |
-| 8 | `review-todo-generator`  | v1.0.0   | 人工覆核待辦產生          | 品管排程        |
-| 9 | `export-tabular`         | v1.1.0   | xlsx / JSON 匯出          | 匯出            |
-| 10| `recidivism-check`       | v1.1.0   | 累犯認定規則（刑法§47）   | 規則引擎        |
+| 1 | `doc-segmenter`          | v0.1.0   | 判決書段落切分            | 前處理          |
+| 2 | `drug-sales-extract`     | v0.1.0   | 毒品販賣欄位抽取          | 抽取            |
+| 3 | `legal-cite-detect`      | v0.1.0   | 法條引用偵測              | 抽取            |
+| 4 | `pii-deid`               | v0.1.0   | 個資去識別化              | 資安            |
+| 5 | `sentence-normalize`     | v0.1.0   | 量刑規則正規化            | 正規化          |
+| 6 | `cite-tracer`            | v0.1.0   | 段落引用追溯              | 稽核            |
+| 7 | `contradiction-check`    | v0.1.0   | 矛盾檢核（規則 vs LLM）  | 品管            |
+| 8 | `review-todo-generator`  | v0.1.0   | 人工覆核待辦產生          | 品管排程        |
+| 9 | `export-tabular`         | v0.1.0   | xlsx / JSON 匯出          | 匯出            |
+| 10| `recidivism-check`       | v0.1.0   | 累犯認定規則（刑法§47）   | 規則引擎        |
 
 > 各技能的完整輸入／輸出、規則細節、參考資料，請見該資料夾的 `SKILL.md` 與 `references/*.md`。
 

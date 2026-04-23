@@ -1,7 +1,7 @@
 ---
 name: cite-tracer
 description: Use this skill to attach paragraph-level citations to extracted judgment fields so every value can be traced back to the exact paragraph it came from. Trigger whenever the user wants source attribution for structured extractions, an audit trail, evidence for a QA reviewer, or wants to verify that a downstream extractor's output is grounded in the input document. Input is a set of extracted fields plus the segmented judgment JSON from doc-segmenter; output is a field_trace list with source_paragraph_ids and a match_score per field. Keywords - 段落引用追溯, source attribution, citation, provenance, audit, evidence trace.
-version: 1.2.0
+version: 0.1.0
 license: Proprietary
 ---
 

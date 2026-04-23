@@ -1,7 +1,7 @@
 ---
 name: sentence-normalize
 description: Use this skill to normalize Chinese-formatted Taiwan judgment numeric expressions into machine-comparable values. Trigger whenever the user wants to convert sentence lengths (有期徒刑, 拘役, 無期徒刑) into months or days, convert monetary amounts in 新臺幣 into an integer number of TWD, or convert Republic-of-China dates (中華民國 115 年 4 月 21 日) into ISO 8601 Gregorian dates. Handles traditional 大寫 numerals (零壹貳參肆伍陸柒捌玖拾佰仟萬億), traditional-simplified 一二三四五六七八九十百千萬, and Arabic digits interchangeably. Keywords - 量刑正規化, 刑期月數, 大寫數字, 罰金, ROC 日期, normalize sentence, chinese numeral.
-version: 1.3.1
+version: 0.1.0
 license: Proprietary
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: contradiction-check
 description: Use this skill when Claude needs to compare two structured field dictionaries (typically a rule-engine extraction versus an LLM extraction, or LLM-vs-LLM re-extraction) for a Taiwan judgment and emit a per-field diff with similarity scores and mismatch flags. Trigger whenever the user asks to cross-check, reconcile, compare two JSON extraction outputs, find contradictions, audit the extractor, or produce a QA diff for 判決書 pipelines. Keywords - contradiction, mismatch, diff, rule vs LLM, QA compare, similarity, Jaccard, 矛盾檢核, 交叉比對.
-version: 1.4.0
+version: 0.1.0
 license: Proprietary
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: export-tabular
 description: Use this skill when Claude needs to export a list of field-record dicts (one per Taiwan judgment) to xlsx or pretty JSON, with optional column ordering/filtering. Trigger whenever the user asks to dump results, write a spreadsheet, produce xlsx/csv/json, deliverable output, 匯出, 表格, or end-of-pipeline download. Falls back to CSV if openpyxl is missing. Keywords - export, xlsx, excel, csv, json dump, tabular, 匯出, 表格, 下載, deliver results.
-version: 1.1.0
+version: 0.1.0
 license: Proprietary
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: drug-sales-extract
 description: Use this skill when Claude needs to extract the ~28 structured fields that describe a Taiwan drug-sales (販賣毒品) criminal judgment - defendant name, drug class and type, transaction counts and amounts, buyer, seized weight, indicted statutes, sentence months, fines, recidivism flag, confession, probation, forfeiture, and so on. Trigger whenever the user uploads a drug-case judgment (毒品危害防制條例) and asks to extract fields, populate a spreadsheet row, or feed a DB. The extractor is null-safe - on a non-drug case (e.g. drunk driving) it returns every field with sensible null defaults plus `is_drug_sales_case: false`. Keywords - 毒品販賣, 欄位抽取, 販賣, 級別, 交易金額, drug sales extraction, 28 fields.
-version: 2.1.0
+version: 0.1.0
 license: Proprietary
 ---
 

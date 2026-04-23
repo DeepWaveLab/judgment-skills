@@ -1,7 +1,7 @@
 ---
 name: doc-segmenter
 description: Use this skill when Claude needs to split a Taiwan criminal judgment (判決書) into its canonical sections (主文, 事實, 犯罪事實, 證據, 理由, 論罪科刑, 據上論斷, 附錄法條) and assign stable paragraph IDs. Trigger whenever the user uploads a judgment PDF or text and asks to segment, structure, chunk, or tag paragraphs, or whenever a downstream extractor needs paragraph-addressable input. Keywords - 段落切分, 分段, segment judgment, paragraph id, section detection, 主文, 犯罪事實, 理由, 據上論斷.
-version: 1.6.2
+version: 0.1.0
 license: Proprietary
 ---
 

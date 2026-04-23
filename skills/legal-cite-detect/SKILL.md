@@ -1,7 +1,7 @@
 ---
 name: legal-cite-detect
 description: Use this skill when Claude needs to detect every citation to a Taiwan statute inside a judgment (or any Chinese legal document). Outputs a list of structured citations with statute short name, article number, paragraph, item, the raw span, and its character offset. Handles both Arabic numerals ("第185條之3") and common Chinese numerals ("第壹佰捌拾伍條之參"). Covered statutes include 中華民國刑法, 刑事訴訟法, 刑法施行法, 毒品危害防制條例, plus aliases (刑法, 刑訴, 毒危條例). Trigger whenever the user asks to list cited laws, count citations, map 法條, or build a citation index. Keywords - 法條, 引用, citation, 刑法, 刑訴, 毒危條例, 毒品危害防制條例.
-version: 1.5.0
+version: 0.1.0
 license: Proprietary
 ---
 
